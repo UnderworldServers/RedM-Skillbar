@@ -48,7 +48,8 @@ end
 function listenToKeyCheck()
     while inProgress do
         Wait(0)
-        if IsControlJustPressed(1,38) then
+		--local key = tonumber(key)
+        if IsControlJustPressed(0,0xCEFD9220) or IsDisabledControlJustPressed(0,0xCEFD9220) then
             SendNUIMessage({
                 action = "check"
             })
