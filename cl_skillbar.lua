@@ -66,7 +66,7 @@ RegisterNUICallback("finish",function(data,cb)
     end
 end)
 
-AddEventHandler('qb-core:client:OnPlayerDeath',function()
+AddEventHandler('vorp:ImDead',function(state)
     if activePromise and inProgress then
         activePromise:resolve(false)
         activePromise = nil
