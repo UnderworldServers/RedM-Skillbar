@@ -11,7 +11,8 @@ client_script "cl_skillbar.lua"
 files {
     "ui/index.html",
     "ui/style.css",
-    "ui/main.js"
+    "ui/main.js",
+    "ui/crock.ttf",
 }
 
 

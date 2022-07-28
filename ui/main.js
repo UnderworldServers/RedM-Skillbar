@@ -28,8 +28,16 @@ window.addEventListener("message",e => {
     animtime = undefined; 
     $("#mainCanvas").fadeIn();
     $(".load-text").fadeIn();
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    requestAnimationFrame(step);
+    $(".timer-text").fadeIn();
+	document.getElementById("innerText").innerHTML = 'Press [SPACE]<br>on <span style="color:#009900">green</span>';
+	document.getElementById("timerText").innerHTML = "3";
+	setTimeout(() => {document.getElementById("timerText").innerHTML = "2";}, 1000)
+	setTimeout(() => {document.getElementById("timerText").innerHTML = "1";}, 2000)
+	setTimeout(() => {
+	   document.getElementById("timerText").innerHTML = "";
+	   ctx.clearRect(0,0,canvas.width,canvas.height);
+	   requestAnimationFrame(step);
+	}, 3000)
   }
   if(e.data.action == "check"){
     let success = checkIsIn(claude,startY,endY)
@@ -48,6 +56,7 @@ window.addEventListener("message",e => {
       animtime = undefined; 
       $("#mainCanvas").fadeIn();
       $(".load-text").fadeIn();
+      $(".timer-text").fadeIn();
       ctx.clearRect(0,0,canvas.width,canvas.height);
       requestAnimationFrame(step);
     }
@@ -93,7 +102,7 @@ function step(time){
 
     ctx.beginPath();
     ctx.arc(125,125,85,minusPi,patrik);
-    ctx.strokeStyle = "#009900";
+    ctx.strokeStyle = "#ee0d15";
     ctx.stroke();
 
     
@@ -115,7 +124,7 @@ function step(time){
 
         ctx.beginPath();
         ctx.arc(125,125,85,endY,claude);
-        ctx.strokeStyle = "#009900";
+        ctx.strokeStyle = "#ee0d15";
         ctx.stroke();
         
         
@@ -135,13 +144,14 @@ function step(time){
 
       ctx.beginPath();
       ctx.arc(125,125,85,startY,patrik);
-      ctx.strokeStyle = "#FF0000";
+      ctx.strokeStyle = "#009900";
       ctx.stroke();
     }
     if (time == animtime || needtofinish){
       time = undefined;
       claude = undefined;
       $(".load-text").fadeOut(300);
+      $(".timer-text").fadeOut(300);
       $("#mainCanvas").fadeOut(300,function(){
           ctx.clearRect(0,0,canvas.width,canvas.height);
           $.post("https://skillbar/finish",JSON.stringify({

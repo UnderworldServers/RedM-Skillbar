@@ -1,3 +1,8 @@
+@font-face {
+	font-family: crock;
+	src: url(crock.ttf);
+	font-weight: bold;
+}
 
 .taskbar-wrapper{
     position: absolute;
@@ -78,6 +83,17 @@
   /* font-weight: 200; */
   color:white;
   text-shadow: 0px 2px 0px #000000b8,0px 2px 5px rgba(0,0,0,.6);
-  font-family: 'Goldman', cursive;
+  font-family: crock;
   font-size:20px;
+}
+.timer-text{
+  position: absolute;
+  top:53%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  /* font-weight: 200; */
+  color: rgb(238, 13, 21);
+  text-shadow: 0px 2px 0px #000000b8,0px 2px 5px rgba(0,0,0,.6);
+  font-family: crock;
+  font-size: 25px;
 }

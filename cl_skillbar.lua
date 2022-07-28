@@ -8,7 +8,7 @@ local levels = {
         width = 20,
     },
     ["medium"] = {
-        duration = 2000,
+        duration = 1300,
         width = 1
     },
     ["hard"] = {
@@ -49,7 +49,7 @@ function listenToKeyCheck()
     while inProgress do
         Wait(0)
 		--local key = tonumber(key)
-        if IsControlJustPressed(0,0xCEFD9220) or IsDisabledControlJustPressed(0,0xCEFD9220) then
+        if IsControlJustPressed(0,0xD9D0E1C0) or IsDisabledControlJustPressed(0,0xD9D0E1C0) then	-- SPACE 0xD9D0E1C0
             SendNUIMessage({
                 action = "check"
             })
