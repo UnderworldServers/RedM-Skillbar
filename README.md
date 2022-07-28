@@ -3,7 +3,15 @@ Forked and converted for RedM usages, with added visual features. This implement
 
 For developers only.
 
-![image](https://user-images.githubusercontent.com/31771817/135759503-53720566-aa19-4435-a4ce-47975168dc7a.png)
+![image](https://i.ibb.co/QmGqh8j/skillcheckexample.jpg)
+
+## Installation :
+
+```Code > Download Zip``` move folder to /resources
+
+Ensure folder name is ```skillbar```
+
+In server.cfg add ```ensure skillbar```
 
 ### Usage : 
 `exports["skillbar"]:CreateSkillbar(1, "medium")` 
